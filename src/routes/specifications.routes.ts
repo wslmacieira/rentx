@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { SpecificationsRepository } from "../modules/car/repositories/SpecificationsRepository";
+import { SpecificationsRepository } from "../modules/car/repositories/implementations/SpecificationsRepository";
 import { CreateSpecificationService } from "../modules/car/services/CreateSpecificationService";
 
 const specificationsRoutes = Router();
