@@ -2,6 +2,8 @@ import express from "express";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import swaggerUi from "swagger-ui-express";
 
+import "./database";
+
 import { router } from "./routes";
 import swaggerFile from "./swagger.json";
 
