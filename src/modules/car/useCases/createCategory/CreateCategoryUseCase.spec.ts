@@ -24,8 +24,6 @@ describe("Create Category", () => {
       category.name
     );
 
-    console.log(categoyCreated);
-
     expect(categoyCreated).toHaveProperty("id");
   });
 
