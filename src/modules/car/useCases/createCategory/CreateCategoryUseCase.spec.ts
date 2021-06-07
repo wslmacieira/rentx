@@ -6,7 +6,7 @@ import { CreateCategoryUsecase } from "./CreateCategoryUseCase";
 describe("Create Category", () => {
   let createCategoryUseCase: CreateCategoryUsecase;
   let categoriesRepositoryInMemory: CategoriesRepositoryInMemory;
-  beforeAll(() => {
+  beforeEach(() => {
     categoriesRepositoryInMemory = new CategoriesRepositoryInMemory();
     createCategoryUseCase = new CreateCategoryUsecase(
       categoriesRepositoryInMemory

@@ -1,4 +1,4 @@
-interface ICreateDTO {
+interface ICreateCarDTO {
   name: string;
   description: string;
   daily_rate: number;
@@ -8,4 +8,4 @@ interface ICreateDTO {
   category_id: string;
 }
 
-export { ICreateDTO };
+export { ICreateCarDTO };
