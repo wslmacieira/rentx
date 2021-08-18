@@ -1,5 +1,5 @@
-import { ICreateCarDTO } from "@modules/car/dtos/ICreateCarDTO";
-import { Car } from "@modules/car/infra/typeorm/entities/Car";
+import { ICreateCarDTO } from "@modules/cars/dtos/ICreateCarDTO";
+import { Car } from "@modules/cars/infra/typeorm/entities/Car";
 
 import { ICarsRepository } from "../ICarsRepository";
 
@@ -42,10 +42,10 @@ class CarsRepositoryInMemory implements ICarsRepository {
   ): Promise<Car[]> {
     const cars = this.cars.filter((car) => {
       if (
-        car.available === true &&
-        ((category_id && car.category_id === category_id) ||
-          (brand && car.brand === brand) ||
-          (name && car.name === name))
+        car.available === true ||
+        (category_id && car.category_id === category_id) ||
+        (brand && car.brand === brand) ||
+        (name && car.name === name)
       ) {
         return car;
       }
