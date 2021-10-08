@@ -9,6 +9,7 @@ export class CreateSpecifications1622677635982 implements MigrationInterface {
           {
             name: "id",
             type: "uuid",
+            isPrimary: true,
           },
           {
             name: "name",
