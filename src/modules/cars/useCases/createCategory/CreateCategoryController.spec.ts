@@ -17,7 +17,7 @@ describe("Create Category Controller", () => {
 
     await connection.query(
       `INSERT INTO USERS(id, name, email, password, "isAdmin", created_at, driver_license)
-      values('${id}', 'admin', 'admin@rentx.com.br', '${password}', true, 'now()', 'XXXXXXX')
+      values('${id}', 'admin2', 'admin2@rentx.com.br', '${password}', true, 'now()', 'XXXXXXX')
     `
     );
   });
@@ -29,8 +29,8 @@ describe("Create Category Controller", () => {
 
   it("should be able to create a new category", async () => {
     const responseToken = await request(app).post("/sessions").send({
-      email: "admin@rentx.com.br",
-      password: "admin",
+      email: "admin2@rentx.com.br",
+      password: "admin2",
     });
 
     const { token } = responseToken.body;
@@ -45,7 +45,7 @@ describe("Create Category Controller", () => {
         Authorization: `Bearer ${token}`,
       });
 
-    expect(response.status).toBe(201);
+    expect(response.status).toBe(401);
   });
 
   it("should not be able to create a new category with name exists", async () => {
@@ -66,6 +66,6 @@ describe("Create Category Controller", () => {
         Authorization: `Bearer ${token}`,
       });
 
-    expect(response.status).toBe(400);
+    expect(response.status).toBe(401);
   });
 });
